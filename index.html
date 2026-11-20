@@ -1,0 +1,117 @@
+
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AFTERFALL — Article-Driven Adventure</title>
+<link rel="stylesheet" href="game.css"></head>
+<body>
+<div id="prologue">
+ <div class="prologue-card">
+  <div class="progDots" id="progDots"><span class="on">●</span> ● ● ● ● ● ● ● ●</div>
+  <div class="day" id="proDay">DAY 0</div>
+  <h1 id="proTitle">It started with six students.</h1>
+  <div id="proBody"><p>They collapsed within hours of one another on North Campus. Fever. Confusion. Then violent neurological symptoms no one could explain.</p><p>By midnight, the university hospital had sealed its doors. Within days, NVC-11 cases were appearing beyond the campus.</p></div>
+  <button id="proNext">Continue →</button>
+ </div>
+</div>
+
+<div id="characterSelect" class="hidden">
+ <div class="char-select-wrap">
+  <div class="char-select-kicker">AFTERFALL // CHARACTER SELECT</div>
+  <h1>Who are you in the Network?</h1>
+  <div class="char-intro">Years after the Fall, the university has become one of the Network’s major hubs. You are part of Network Field Support: the people who carry questions, evidence, equipment, and decisions between the library and the world outside it. Choose the survivor you want to inhabit.</div>
+
+  <div class="survivor-grid">
+   <article class="survivor-card" data-char="rowan"><div class="survivor-img"></div><div class="survivor-copy"><h3>ROWAN</h3><div class="survivor-pronouns">they/them · 22</div><div class="survivor-fragment">Gentle, perceptive, and comfortable with uncertainty. Rowan notices what hasn't been said and gives people time before deciding what they think.</div><button class="backstory-btn" data-backstory="rowan">Who were they?</button></div></article>
+   <article class="survivor-card" data-char="june"><div class="survivor-img"></div><div class="survivor-copy"><h3>JUNE</h3><div class="survivor-pronouns">she/her · 58</div><div class="survivor-fragment">Warm, practical, and difficult to rattle. June makes complicated situations feel manageable, though experience can sometimes make a new problem look more familiar than it is.</div><button class="backstory-btn" data-backstory="june">Who was she?</button></div></article>
+   <article class="survivor-card" data-char="eli"><div class="survivor-img"></div><div class="survivor-copy"><h3>ELI</h3><div class="survivor-pronouns">he/him · 27</div><div class="survivor-fragment">Quick, competitive, and difficult to bluff. Eli tests certainty hard, but he's less cynical than he likes to appear and will change his mind when something genuinely convinces him.</div><button class="backstory-btn" data-backstory="eli">Who was he?</button></div></article>
+   <article class="survivor-card" data-char="chiara"><div class="survivor-img"></div><div class="survivor-copy"><h3>CHIARA</h3><div class="survivor-pronouns">she/they · 34</div><div class="survivor-fragment">Warm, curious, and openly courageous. Chiara is usually willing to move first, ask the uncomfortable question, or admit plainly when she doesn't know.</div><button class="backstory-btn" data-backstory="chiara">Who were they?</button></div></article>
+   <article class="survivor-card" data-char="micah"><div class="survivor-img"></div><div class="survivor-copy"><h3>MICAH</h3><div class="survivor-pronouns">he/him · 40s</div><div class="survivor-fragment">Warm, curious, and intensely interested in how things connect. Micah follows possibilities easily; the harder question is which one matters right now.</div><button class="backstory-btn" data-backstory="micah">Who was he?</button></div></article>
+  </div>
+
+  <div id="backstoryPanel"></div>
+
+  <div class="char-customize">
+   <div><label for="playerName">NAME</label><input id="playerName" type="text" placeholder="Choose a survivor first"></div>
+   <div><label for="playerPronouns">PRONOUNS</label><select id="playerPronouns"><option>they/them</option><option>she/her</option><option>he/him</option><option>she/they</option><option>he/they</option><option>they/she</option><option>they/he</option></select></div>
+   <button id="confirmCharacter" disabled>ENTER AFTERFALL →</button>
+  </div>
+  <div class="char-hint">Character profiles add narrative texture only—no character receives a gameplay or information-literacy advantage.</div>
+ </div>
+</div>
+
+<div id="game">
+<aside id="campaign">
+ <div class="logo">AFTERFALL<br>NETWORK FIELD LOG</div>
+ <div class="cap">CONNECTED MISSIONS</div>
+ <button class="lesson active" id="lesson1"><b>01 · Twenty Minutes Out</b><small>Scholarly literature · strategic reading</small></button>
+ <button class="lesson locked" id="lesson2"><b>02 · The Official Story</b><small>Information lifecycle · provenance · claim tracing</small></button>
+ <button class="lesson locked" id="lesson3"><b>03 · Source Evaluation</b><small>Evidence, authority & context</small></button>
+ <button class="lesson locked" id="lesson4"><b>04 · Misinformation</b><small>Corroboration under pressure</small></button>
+ <button class="lesson locked" id="lesson5"><b>05 · Data & Visuals</b><small>Read outbreak evidence</small></button>
+ <button class="lesson locked" id="lesson6"><b>06 · Synthesis</b><small>Build the outbreak model</small></button>
+ <div class="cap">CAMPAIGN PROGRESS</div><div id="campaignProgress"><i></i></div>
+ <div style="padding:0 7px;font-size:.56rem;line-height:1.45;color:#687773">Each chapter is a story mission. Research tools you learn remain available and are reused under new pressure.</div>
+</aside>
+<header><div class="brand">AFTERFALL // OUTBREAK INTELLIGENCE</div><div class="chapter" id="chapter">CHAPTER 01 · TWENTY MINUTES OUT</div><div class="time">YEAR 4 · 21:17</div></header>
+<div id="world"><div class="campus-plate"></div><div class="rain"></div><div class="road"></div>
+<div class="bldg library"><h3>HALE LIBRARY</h3><div class="windows"><i></i><i class="lit"></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+<div class="bldg lab"><h3>RESEARCH ANNEX</h3><div class="windows"><i></i><i class="lit"></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+<div id="player"><span class="pc-hair"></span><span class="pc-pack"></span><span class="pc-leg l"></span><span class="pc-leg r"></span><span class="pc-crutch"></span></div>
+<button class="hot cinematic-hot npc-hot" id="mira" style="left:43%;top:61%"><b>AMINA</b><small>Talk</small></button>
+<button class="hot cinematic-hot" id="lab" style="left:70%;top:54%"><b>RESEARCH ANNEX</b><small>Enter</small></button>
+<button class="hot locked cinematic-hot" id="library" style="left:19%;top:50%"><b>HALE LIBRARY</b><small>Enter</small></button>
+<button class="hot locked cinematic-hot" id="comms" style="left:48%;top:42%"><b>COMMUNICATIONS</b><small>Enter</small></button>
+<div id="progressRail"><b>MISSION PATH</b><div id="path1" class="now">● Reach Amina</div><div id="path2">○ Find the paper</div><div id="path3">○ Read for evidence</div><div id="path4">○ Make a decision</div></div><div id="next"><strong>NEXT ACTION</strong><span id="nextLabel">Talk to Amina</span><button id="nextGo">SHOW ME</button></div>
+
+<div id="firstPersonNav" aria-label="Campus movement">
+  <div class="fp-context">
+    <span class="fp-kicker">CURRENT POSITION</span>
+    <b id="fpLocation">Campus Network Hub</b>
+    <small id="fpHint">Choose where to go.</small>
+  </div>
+  <div class="fp-destinations" id="fpDestinations">
+    <button data-node="annex">Walk to Research Annex <span>→</span></button>
+    <button data-node="library" class="locked-node">Cross to Hale Library <span>→</span></button>
+    <button data-node="comms" class="locked-node">Go to Communications <span>→</span></button>
+  </div>
+</div>
+
+<div id="dialogue" class="panel hidden"></div>
+<div id="quickRead" class="panel hidden">
+ <div class="qr-head">
+  <div><div class="kicker">AMINA // HALE LIBRARY FIELD BRIEFING</div><h2>We don't have time to read every paper from start to finish.</h2>
+  <p style="color:#aeb9b5">So first we <b>preview</b>. The goal is to decide what a paper is about, what kind of evidence it contains, and whether it deserves a deeper read.</p></div>
+  <div class="qr-step" id="qrStep">STEP 1 / 5</div>
+ </div>
+ <div id="qrBody"></div>
+ <div id="qrPersistentNav" class="qr-fixed-nav">
+   <button id="qrBackFixed">← Back</button>
+   <div><span id="qrNavCount">1 of 5</span><small> Amina's rapid-reading lesson</small></div>
+   <button id="qrNextFixed">Next screen →</button>
+ </div>
+</div>
+<div id="beamTriage" class="panel hidden">
+ <div class="beam-head"><div><div class="kicker">HALE LIBRARY · THREE RELEVANT PAPERS FOUND</div><h2>Which paper can answer Iona before she reaches the underpass?</h2><p style="color:#aeb9b5">Westbridge evacuees are twenty minutes from the South Transit Underpass. We need evidence about whether prolonged enclosed co-presence could increase their risk. <b>Quick-read all three papers, compare what each actually studies, then select the one that most directly answers the evacuation question.</b></p></div><div class="timer">EVAC 08:42</div></div>
+ <div class="paper-cards" id="triageCards"></div>
+ <div id="triageFeedback">AMINA: “Don't ask whether a paper is ‘good.’ Ask what job it can do for <em>our question</em>. Inspect all three.”</div>
+ <div class="triage-nav">
+      <button id="backToQuickRead">← Review Amina's quick-reading lesson</button>
+      <div class="center"><b>CHOOSE THE MOST RELEVANT PAPER</b><span>Select a paper above, then confirm your choice here.</span></div>
+      <button id="continueChoosePaper">Choose this paper →</button>
+    </div>
+</div>
+<div id="reader" class="panel hidden"><button class="close" id="closeReader">×</button><nav class="nav"><h4>ARTICLE MAP</h4><div id="sections"></div></nav><main class="paperwrap"><div id="mission"></div><div id="paper"></div></main><aside class="side"><h4>RESEARCH QUESTION</h4><p id="rq"></p><h4>EVIDENCE ROLE</h4><p id="beamRole">Evidence we are analyzing for this question.</p><h4>WORKING MODEL</h4><p id="working">No conclusion yet.</p></aside></div>
+<div id="story" class="panel hidden"></div><div id="decision" class="panel hidden"></div><div id="intel" class="panel hidden"><h3 style="margin-top:0">Outbreak Intelligence</h3><div id="intelList"></div></div>
+</div>
+<div id="hud"><div><b>CURRENT OBJECTIVE</b><span id="objective">Meet Amina at the Network hub.</span></div><div><b>OUTBREAK MODEL</b><span id="model">Transmission route unknown.</span></div><div><button class="hudbtn" id="intelBtn">INTEL (0)</button></div></div>
+</div>
+<div id="historyNav" aria-label="Game navigation">
+  <button id="historyBack" type="button" aria-label="Go back to previous screen">← Back</button>
+  <button id="saveProgressBtn" type="button" aria-label="Save game progress">Save Progress</button>
+  <button id="historyForward" type="button" aria-label="Go forward to next screen">Forward →</button>
+</div>
+<script src="characters.js"></script>
+<script src="game.js"></script></body></html>
